@@ -1,3 +1,9 @@
+# PDF Toolbox
+
+Thanks to Cursor and other AI tools, now I could develop a series of simple tools to help my daily work, without compromising my data security.
+
+It is weird that I couldn't google out these tools. They should've been everywhere, as they could be developed by single or few cursor prompts. 
+
 # PDF Single-Side Scan to Double-Side Tool
 
 A simple web tool that converts single-side scanned documents into double-side documents. All processing is done locally without uploading PDF files to external networks, protecting your privacy and security.
