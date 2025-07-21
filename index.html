@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF文档单面扫描转双面工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="language-switch">
+                <button class="lang-btn active" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+            <h1 data-zh="PDF文档单面扫描转双面工具" data-en="PDF Single-Side Scan to Double-Side Tool">PDF文档单面扫描转双面工具</h1>
+            <p data-zh="将单面扫描的文档转换成双面文档，全程在本地完成，保护您的隐私" data-en="Convert single-side scanned documents to double-side documents, all processing done locally to protect your privacy">将单面扫描的文档转换成双面文档，全程在本地完成，保护您的隐私</p>
+        </header>
+
+        <main>
+            <div class="upload-grid">
+                <!-- A文档上传区域 -->
+                <div class="upload-section">
+                    <h3 data-zh="A文档上传（正面文档，正序）" data-en="Document A Upload (Front, Forward)">A文档上传（正面文档，正序）</h3>
+                    <div class="upload-area" id="uploadAreaA">
+                        <div class="upload-content">
+                            <div class="upload-icon">📄</div>
+                            <p data-zh="点击上传或拖拽文件到此处" data-en="Click to upload or drag files here">点击上传或拖拽文件到此处</p>
+                            <p class="file-info" data-zh="支持PDF格式" data-en="PDF format supported">支持PDF格式</p>
+                        </div>
+                        <input type="file" id="fileInputA" accept=".pdf" hidden>
+                    </div>
+                    <div class="file-status" id="fileStatusA"></div>
+                </div>
+
+                <!-- B文档上传区域 -->
+                <div class="upload-section">
+                    <h3 data-zh="B文档上传（反面文档，倒序）" data-en="Document B Upload (Back, Reverse)">B文档上传（反面文档，倒序）</h3>
+                    <div class="upload-area" id="uploadAreaB">
+                        <div class="upload-content">
+                            <div class="upload-icon">📄</div>
+                            <p data-zh="点击上传或拖拽文件到此处" data-en="Click to upload or drag files here">点击上传或拖拽文件到此处</p>
+                            <p class="file-info" data-zh="支持PDF格式" data-en="PDF format supported">支持PDF格式</p>
+                        </div>
+                        <input type="file" id="fileInputB" accept=".pdf" hidden>
+                    </div>
+                    <div class="file-status" id="fileStatusB"></div>
+                </div>
+
+                <!-- 输出设置区域 -->
+                <div class="output-section">
+                    <h3 data-zh="输出设置" data-en="Output Settings">输出设置</h3>
+                    <div class="output-path">
+                        <label for="outputPath" data-zh="输出文件名：" data-en="Output filename:">输出文件名：</label>
+                        <input type="text" id="outputPath" data-zh-placeholder="输出文档.pdf" data-en-placeholder="output.pdf" value="">
+                    </div>
+                    <div class="processing-status" id="processingStatus"></div>
+                    <button class="process-btn" id="processBtn" disabled>
+                        <span class="btn-text" data-zh="开始处理" data-en="Start Processing">开始处理</span>
+                        <span class="btn-loading" data-zh="处理中..." data-en="Processing..." hidden>处理中...</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 处理进度 -->
+            <div class="progress-container" id="progressContainer" hidden>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText" data-zh="准备中..." data-en="Preparing...">准备中...</div>
+            </div>
+        </main>
+
+        <footer>
+            <p data-zh="© 2024 PDF双面工具 - 本地处理，保护隐私" data-en="© 2024 PDF Double-Side Tool - Local Processing, Privacy Protected">© 2024 PDF双面工具 - 本地处理，保护隐私</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
